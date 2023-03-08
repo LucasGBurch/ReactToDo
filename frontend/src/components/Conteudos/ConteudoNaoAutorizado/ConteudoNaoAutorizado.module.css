@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.inicio {
+  background-color: #6883BA;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.25) 5px -5px 15px;
+  display: flex;
+  flex-direction: column;
+  font-size: 32px;
+  font-weight: bold;
+  height: 300px;
+  justify-content: space-around;
+  line-height: 32px;
+  margin: 32px 0;
+  max-width: 500px;
+  min-width: 350px;
+  padding: 24px;
+  text-align: center;
+}
+
+.texto-container {
+  background-color: lightgray;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
+  padding: 18px;
+}
+
+.texto-container h1 {
+  font-size: 28px;
+}
+
+.texto-container p {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 8px auto;
+}

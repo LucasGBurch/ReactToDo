@@ -1,0 +1,22 @@
+.lista {
+  background-color: lightgray;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin: 8px auto;
+  padding: 16px;
+  text-align: center;
+  width: 400px;
+}
+
+.lista__itens {
+  background-color: #6883BA;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 18px;
+  justify-content: space-evenly;
+  margin-bottom: 12px;
+  padding: 16px 0;
+}
+
