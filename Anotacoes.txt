@@ -1,0 +1,10 @@
+"docker compose up" é o comando que, na pasta do compose, executa todos os comandos de instalação configurados no arquivo. Pode ficar meio violento a CPU por uns minutos, mas a priori dá tudo certo se os comandos estiverem ok. Após isso o servidor ficar rodando e é pra abrir nas portas indicadas.
+
+Instruções da versão que funcionou:
+// instalação das dependências
+docker-compose build --no-cache
+
+// rodar a aplicação após ter as dependências instaladas
+docker-compose up
+
+

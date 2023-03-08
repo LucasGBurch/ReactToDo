@@ -1,20 +1,20 @@
-# Desafio do Módulo 4 de NodeJS básico do Projeto Impulsionar
+# Desafios do Projeto Impulsionar da South System.
 
-- O objetivo deste projeto é atender o solicitado no quarto desafio de Front-End. Nossa aplicação agora tem um pequeno servidor Http criado com node.js + express!
+- Este projeto contém os cinco desafios construídos e acumulados ao longo do treinamento do projeto Impulsionar.
 
 # Instruções para rodar:
 
 - Ao Baixar/Abrir o projeto, é recomendável fazê-lo no VSCode, já que essa IDE foi utilizada para o desenvolvimento do desafio;
 
-- É preciso ter instalado na sua máquina uma versão LTS do Node ( https://nodejs.org/pt-br/ ), para poder executar os comandos npm (node package manager) que seguem:
+- É preciso ter instalado na sua máquina uma versão LTS do Node ( https://nodejs.org/pt-br/ ), para poder executar os comandos npm (node package manager). **ATENÇÃO! As instruções abaixo podem ser substituídas pelos comandos do DOCKER, NA ÚLTIMA SESSÃO DESTE DOCUMENTO, a partir do Desafio do Módulo 5**. A função do Docker é justamente rodar as duas partes do projeto descritas abaixo. Primeiro com instalação de dependências, caso não estejam instaladas, e depois rodando a aplicação. Caso prefira rodar sem o Docker, siga os passos abaixo:
 
-    - Para rodar a aplicação, é preciso executar o comando "npm install" ou a abreviação "npm i". Isso se deve ao fato de que a pasta de node_modules com as configurações necessárias para a aplicação não costumam ir para os repositórios devido ao seu peso no commit;
+    - Para instalar as dependências necessárias para rodar a aplicação, é preciso executar o comando "npm install" ou a abreviação "npm i". Isso se deve ao fato de que a pasta de node_modules com as configurações necessárias para a aplicação não costumam ir para os repositórios devido ao seu peso no commit;
 
-    - Agora essa instrução vale para as duas pastas de projeto que temos: a de frontend, onde fica o material criado até o Desafio 3; e a de backend, onde fica o código novo introduzido neste desafio;
+    - Agora essa instrução vale para as duas pastas de projeto que temos: a de frontend, onde fica o material criado até o Desafio 3; e a de server, onde fica o código novo introduzido no desafio 4, para a parte backend;
 
-    - Ao ter a pasta node_modules adicionada ao projeto, abrir aplicacao, clicando com botão direito do mouse nas pastas para abrir terminal integrado no diretório de cada parte ("...\solucao_modulo4\frontend" e "...\solucao_modulo4\backend") e executar o comando "npm start" em cada uma.
+    - Ao ter a pasta node_modules adicionada ao projeto, abrir aplicacao, clicando com botão direito do mouse nas pastas para abrir terminal integrado no diretório de cada parte ("...\solucao_modulo5\frontend" e "...\solucao_modulo5\server") e executar o comando "npm start" em cada uma.
 
-# Estrutura até o Desafio 3 (Pode pular até o último tópico, que fala do Desafio 4):
+# Estrutura até o Desafio 3:
 
 - Através da biblioteca React Router (react-router-dom), a aplicação simula diferentes páginas para navegar com diferentes componentes e funções. São estas cinco:
 
@@ -72,20 +72,44 @@
 
 - Primeiro os imports de componentes em <App /> dentro de suas rotas foram refatorados para chamarem os componentes através do método do React.lazy(), para que eles só sejam carregados quando solicitados. Isso porque o modo de produção seria uma aplicação onde usuários interagem com um servidor de verdade, ou seja, ela consome dados de internet;
 
-- Por fim, é necessário rodar o comando "npm run build"; passados alguns segundos, a pasta deverá ser gerada;
+- Por fim, é necessário rodar o comando "npm run build"; passados alguns segundos, a pasta deverá ser gerada.
 
-# O que há de novo no Desafio 4:
-
-- Os estilos foram aprimorados novamente, para oferecer uma melhor experiência e interação aos usuários (UX/UI);
+# Desafio 4: integração frontend-backend:
 
 - Agora, temos um modesto servidor http criado em uma nova pasta: a de backend. Esse servidor faz uma requisição para nossa API estática de tarefas (do mock.api que usamos no Desafio 3) e exibe através do servidor os dados;
 
-- Para testar essa funcionalidade, foi utilizado o Postman (https://www.postman.com/), onde criamos requisições como as da API para um link direcionado. No nosso caso, o endereço especificado é https://localhost:3001/api/todo, e a requisição a ser feita no Postman deve ser do tipo GET. Caso ocorra problemas de funcionamento no navegador, certifique-se de ter na sua máquina instalado o "Postman Agent" - encontrado no mesmo site - e de estar com ele rodando antes de tentar enviar a requisição. Você também pode abrir esse endereço diretamente pelo navegador;
+- Para testar essa funcionalidade, foi utilizado o Postman (https://www.postman.com/), onde criamos requisições como as da API para um link direcionado. No nosso caso, o endereço especificado é https://localhost:3001/api/todo, e a requisição a ser feita no Postman deve ser do tipo GET. Caso ocorra problemas de funcionamento no navegador, certifique-se de ter na sua máquina instalado o "Postman Agent" - encontrado no mesmo site - e de estar com ele rodando antes de tentar enviar a requisição. Você encontrará o objeto JSON com os dados caso prefira acessar diretamente o endereço do localhost indicado;
 
-- LEMBRANDO QUE:
-
-    - Para o servidor funcionar, você PRECISA RODAR "npm start" no terminal no endereço da pasta "backend", que executará um "nodemon app.js" e deixará o servidor rodando (até derrubá-lo com "ctrl" + "c", da mesma forma que funciona na aplicação da parte frontend);
-    - Caso o os dados da API estejam vazios, será necessário cadastrar algumas tarefas através da aplicação para que elas sejam visíveis dentro do objeto retornado pelo Postman;
+- ATENÇÃO! Caso o os dados da API estejam vazios, será necessário cadastrar algumas tarefas através da aplicação para que elas sejam visíveis dentro do objeto retornado pelo Postman;
 
 - Por fim, há um tratamento de erros para caso o endereço no arquivo app.js esteja com algum erro de digitação do endereço da /api/todo.
 
+# Parte final - Docker, Deploy e link do Vercel:
+
+- Como citado nas instruções atualizadas sobre rodar o projeto, o Docker realiza o trabalho de instalar os node_modules necessários e de rodar as duas portas da aplicação (frontend em 3000 e server/backend em 3001). Dessa forma, a partir de agora precisamos de apenas um terminal e dois comandos simples;
+
+- **Mas antes, você deve ter o Docker instalado na sua máquina**. Este link mostra as **opções de instalação** dependendo do seu sistema operacional: https://docs.docker.com/get-docker/
+
+- Feita a instalação, abrimos o terminal integrado na pasta/diretório principal do projeto (./solucao_modulo5):
+
+    - Para **instalar as dependências** - node_modules - **rodamos "docker-compose build --no-cache"**. Pode demorar um pouco se for a primeira vez, pois sua máquina ainda não possui as "imagens" com as configurações de aplicação dos diretórios frontend e server. Feita a instalação, certifique-se que as pastas node_modules constam em cada um desses diretórios;
+
+    - Feitas as instalações, a **aplicação pode rodar com o comando "docker compose up"**. Você poderá testá-las no seu navegador abrindo os seguintes endereços:
+
+        - **frontend** - http://localhost:3000
+        - **server (backend)** - http://localhost:3001
+
+        - **Observação**: a parte frontend possui uma imagem 3x maior; não estranhe se levar alguns segundos a mais para carregar;
+
+- Segue a estrutura construída na imagem Docker:
+
+    - A estrutura foi feita com base neste tutorial: https://medium.com/bb-tutorials-and-thoughts/react-local-development-with-docker-compose-5a247710f997 ;
+
+    - Cada um dos dois diretórios conta com um **Dockerfile com uma imagem do tipo node (versão 16.17.1)**. Ela executa a instalação das dependências;
+
+    - O arquivo que **executa os comandos e centraliza as ações** de forma eficaz é o **docker-compose.yml, no diretório inicial do projeto**. Os parâmetros definidos para as duas partes da aplicação são: build, ports, container_name e volumes. No frontend, ainda temos "stdin_open: true", para que o arquivo inicie num modo interativo e permita a navegação na aplicação React.
+
+- Finalmente, **o Deploy/implantação do projeto foi realizado utilizando o Vercel**. A aplicação encontra-se no seguinte endereço:
+    - **frontend** - https://todo-impulsionar-lucas-burch.vercel.app/
+    
+    - **server (backend)** - https://backend-impulsionar-lucas-burch.vercel.app/api/todo

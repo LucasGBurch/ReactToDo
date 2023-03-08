@@ -2,10 +2,11 @@
   align-items: center;
   background-color: #3D3B8E;
   border-radius: 8px;
-  color: white;
+  box-sizing: border-box;
+  color: #e1e1e1;
   display: flex;
   flex-direction: column;
-  font-size: 24px;
+  font-size: 1.5rem;
   justify-content: space-between;
   margin: 24px auto 12px auto;
   padding: 16px;
@@ -13,45 +14,40 @@
   width: 350px;
 }
 
-.autenticacao h1 {
-  font-weight: bold;
-}
-
 .autenticacao label {
   margin-bottom: 12px;
 }
 
 .autenticacao input {
-  border-color: white;
+  border-color: #e1e1e1;
   border-radius: 8px;
   height: 32px;
   text-align: center;
-  width: 300px;
+  width: 250px;
 }
 
 .acoes {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 24px auto;
+  margin: 16px auto 8px auto;
 }
 
 .acoes button {
   background-color: #6883BA;
   border: none;
   border-radius: 8px;
-  color: white;
+  color: #e1e1e1;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 1.125rem;
   height: 32px;
   margin: 12px auto;
   padding: 8px;
 }
 
 .acoes button:hover {
-  background-color: #FB5012;
+  background-color: rgb(247, 162, 120, 0.6);
   color: black;
-  font-weight: bold;
   transition: 0.6s;
 }
 
@@ -61,17 +57,29 @@
 }
 
 .acoes button:last-child:hover {
-  color: #FB5012;
-  font-weight: bold;
+  color: rgb(247, 162, 120, 0.6);
   text-decoration: underline;
 }
 
 .controle {
   display: flex;
   flex-direction: column;
-  margin: 12px auto;
+  margin: 8px auto;
   padding: 12px 12px 0 12px;
 }
-.mudar {
-  
+
+
+@media (max-width: 500px) {
+  .autenticacao {
+    font-size: 1.25rem;
+    width: 316px;
+  }
+
+  .autenticacao input {
+    width: 220px;
+  }
+
+  .acoes button {
+    font-size: 1rem;
+  }
 }
